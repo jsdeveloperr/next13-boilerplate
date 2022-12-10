@@ -1,0 +1,22 @@
+.next
+out
+generators
+node_modules
+package.json
+tsconfig.json
+yarn.lock
+pnpm-lock.yaml
+public
+
+## extensions
+*.*
+Dockerfile
+!*.css
+!*.graphql
+!*.js
+!*.json
+!*.md
+!*.ts
+!*.tsx
+!*.yml
+!*.hb

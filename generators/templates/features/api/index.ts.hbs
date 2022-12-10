@@ -1,0 +1,9 @@
+import Env from '@/libs/helpers/Env';
+import makeApi from '@/libs/core/configureAxios';
+import { {{pascalCase name}} } from '../types';
+
+const api = makeApi(`${Env.API_SERVER_URL}`);
+
+const {{constantCase name}}_URL = '/{{lowerCase name}}';
+
+export const get{{pascalCase name}} = (): Promise<{{pascalCase name}}[]> => api.get({{constantCase name}}_URL);

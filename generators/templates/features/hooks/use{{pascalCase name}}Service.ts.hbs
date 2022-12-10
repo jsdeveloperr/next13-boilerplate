@@ -1,0 +1,23 @@
+import { useCallback } from 'react';
+
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { {{lowerCase name}}Actions, select{{pascalCase name}} } from '../store';
+import { {{pascalCase name}} } from '../types';
+
+export type {{pascalCase name}}ServiceOperators = {
+  {{lowerCase name}}: {{pascalCase name}}[];
+  fetchAll{{pascalCase name}}: () => void;
+};
+
+export const use{{pascalCase name}}Service = (): Readonly<{{pascalCase name}}ServiceOperators> => {
+  const dispatch = useAppDispatch();
+
+  return {
+    {{lowerCase name}}: useAppSelector(select{{pascalCase name}}),
+    fetchAll{{pascalCase name}}: useCallback(() => {
+      dispatch({{lowerCase name}}Actions.fetchAll());
+    }, [dispatch]),
+  };
+};
+
+export default use{{pascalCase name}}Service;

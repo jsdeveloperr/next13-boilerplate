@@ -1,0 +1,13 @@
+.loader {
+  @apply border-[5px] border-[#ffffff33] border-b-white rounded-full
+  w-5 h-5 mx-auto my-0 text-xxs relative indent-[-9999em]
+  after:rounded-full after:w-40 after:h-40
+  animate-spin;
+}
+
+.loader__outlined {
+  @apply border-[5px] border-purple-700 border-b-white rounded-full
+  w-5 h-5 mx-auto my-0 text-xxs relative indent-[-9999em]
+  after:rounded-full after:w-40 after:h-40
+  animate-spin;
+}

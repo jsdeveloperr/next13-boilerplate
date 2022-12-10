@@ -1,0 +1,45 @@
+import { createAction, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { HYDRATE } from 'next-redux-wrapper';
+
+import type { RootState } from '@/store/store';
+import { {{pascalCase name}} } from '../types';
+
+export interface {{pascalCase name}}State {
+  {{lowerCase name}}: {{pascalCase name}}[];
+}
+
+const initialState: {{pascalCase name}}State = {
+  {{lowerCase name}}: [],
+};
+
+// slice
+export const {{lowerCase name}}Slice = createSlice({
+  name: '{{lowerCase name}}',
+  initialState,
+  reducers: {
+    fetchAllSucceeded(state, action: PayloadAction<{{pascalCase name}}[]>) {
+      // eslint-disable-next-line no-param-reassign
+      state.{{lowerCase name}} = action.payload;
+    },
+  },
+  extraReducers: {
+    [HYDRATE]: (state, action) => {
+      return {
+        ...state,
+        ...action.payload.{{lowerCase name}},
+      };
+    },
+  },
+});
+
+// Actions
+export const {{lowerCase name}}Actions = {
+  fetchAll: createAction(`${ {{lowerCase name}}Slice.name}/fetchAll`),
+  fetchAllSucceeded: {{lowerCase name}}Slice.actions.fetchAllSucceeded,
+};
+
+// Selectors
+export const select{{pascalCase name}} = (state: RootState) => state.{{lowerCase name}}.{{lowerCase name}};
+
+// Reducer
+export default {{lowerCase name}}Slice.reducer;

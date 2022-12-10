@@ -1,0 +1,36 @@
+FROM node:16.17.0-alpine3.16 as base
+RUN npm install -g pnpm
+
+FROM base AS deps
+RUN apk add --no-cache libc6-compat
+
+WORKDIR /app
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
+
+FROM base AS builder
+WORKDIR /app
+COPY . .
+COPY --from=deps /app/node_modules ./node_modules
+COPY .env.staging .env.production
+RUN pnpm build:stage
+
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+RUN addgroup nodejs --gid 1001 --system
+RUN adduser nextjs --uid 1001 --system
+
+# COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+USER nextjs
+
+ENV PORT 80
+
+CMD ["pnpm", "start"]

@@ -1,0 +1,28 @@
+export type UserAgent = {
+  browser: string;
+  deviceType?: any;
+  os: string;
+  engine: string;
+  isMobile: boolean;
+  isTablet: boolean;
+  isIos: boolean;
+  source: string;
+  deviceVendor?: any;
+  osVersion: number;
+  browserVersion: number;
+  engineVersion: number;
+  isIphone: boolean;
+  isIpad: boolean;
+  isDesktop: boolean;
+  isChrome: boolean;
+  isFirefox: boolean;
+  isSafari: boolean;
+  isIE: boolean;
+  isEdge: boolean;
+  isOpera: boolean;
+  isMac: boolean;
+  isChromeOS: boolean;
+  isWindows: boolean;
+  isAndroid: boolean;
+  isBot: boolean;
+};

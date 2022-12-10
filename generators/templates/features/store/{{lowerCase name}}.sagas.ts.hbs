@@ -1,0 +1,19 @@
+import { SagaIterator } from '@redux-saga/core';
+import { call, put, takeEvery } from 'redux-saga/effects';
+
+import { get{{pascalCase name}} } from '../api';
+import { {{pascalCase name}} } from '../types';
+import { {{lowerCase name}}Actions } from './{{lowerCase name}}.slice';
+
+// Worker Sagas
+export function* onGet{{pascalCase name}}(): SagaIterator {
+  const {{lowerCase name}}: {{pascalCase name}}[] = yield call(get{{pascalCase name}});
+  yield put({{lowerCase name}}Actions.fetchAllSucceeded({{lowerCase name}}));
+}
+
+// Watcher Saga
+export function* {{lowerCase name}}WatcherSaga(): SagaIterator {
+  yield takeEvery({{lowerCase name}}Actions.fetchAll.type, onGet{{pascalCase name}});
+}
+
+export default {{lowerCase name}}WatcherSaga;
