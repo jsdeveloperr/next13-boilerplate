@@ -23,7 +23,7 @@ Boilerplate to help developers to have a fast project configuration using the mo
 
 ## :rocket: Example
 
-Check our 👉 [example](https://nextjs-13-boilerplate.vercel.app)
+Check our 👉 [example](https://nextjs13-boilerplate.vercel.app)
 
 ### 🗂 Features
 
