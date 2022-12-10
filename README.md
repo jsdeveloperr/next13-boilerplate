@@ -69,14 +69,97 @@ Check our 👉 [example](https://nextjs13-boilerplate.vercel.app)
 └── tsconfig.json            # TypeScript configuration
 ```
 
+## 👨‍💻 Getting Started
+
+### Prerequisites
+
+<details>
+  <summary><a href="https://github.com/nvm-sh/nvm">nvm</a></summary>
+
+```shell
+brew install nvm
+```
+
+</details>
+<details>
+  <summary><a href="https://nodejs.org/en/">Node.js v18</a></summary>
+
+```shell
+nvm install v18.12.0
+```
+
+</details>
+<details>
+  <summary><a href="https://pnpm.io/">Pnpm</a></summary>
+
+```shell
+npm install -g pnpm
+```
+
+</details>
+
+</details>
+<details>
+  <summary><a href="https://www.docker.com/products/docker-desktop/">Docker</a></summary>
+
+```shell
+Docker Desktop Download
+```
+
+</details>
+
 #### ✅ Installation
 
-- Clone you project to your machine
+Requires Node >=14.x
 
-#### 🚀 Install dependencies with pnpm
+Install NPM packages:
 
-```html
-pnpm
+```shell
+pnpm install
+```
+
+#### 🗂 Development
+
+To start the application in the development mode run:
+
+```shell
+pnpm dev
+```
+
+#### 🗂 Build
+
+To build the application for production, run:
+
+```shell
+pnpm build
+```
+
+#### 🗂 Lint
+
+To lint the application run:
+
+```shell
+pnpm lint
+```
+
+#### 🗂 Docker
+
+To docker the application build:
+
+```shell
+pnpm docker:prod:build
+```
+
+To docker the application start:
+
+```shell
+pnpm docker:prod:start
+```
+
+To docker the application stop:
+
+```shell
+pnpm docker:prod:stop
 ```
 
 #### 🎉 Using Plop JS
