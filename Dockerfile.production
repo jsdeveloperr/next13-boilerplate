@@ -33,4 +33,4 @@ USER nextjs
 
 ENV PORT 80
 
-CMD ["pnpm", "start"]
+CMD ["node", "server.js"]
