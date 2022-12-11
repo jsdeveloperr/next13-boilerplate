@@ -52,19 +52,19 @@ Check our 👉 [example](https://nextjs13-boilerplate.vercel.app)
 .
 ├── README.md                # README file
 ├── next.config.js           # Next JS configuration
-├── docs                     # documentation mdx
-├── e2e                      # Cypress e2e
+├── components               # Components folder
+├── @types                   # TypeScript models
 ├── public                   # Public folder
 │   └── assets
 │       └── images           # Image used by default template
 ├──
-│   ├── layout               # Atomic layout components
-│   ├── models               # TypeScript models
-│   ├── constants            # Constants
+│   ├── features             # Features folder
+│   ├── routers              # Routers folder
+│   ├── generators           # Generators folder
 │   ├── pages                # Next JS pages
 │   ├── styles               # PostCSS style folder with Tailwind
-│   ├── i18n                 # Locale i18n
-│   └── utils                # Utility folder
+│   ├── store                # Store file redux and redux-saga
+│   └── libs                 # Libs folder
 ├── tailwind.config.js       # Tailwind CSS configuration
 └── tsconfig.json            # TypeScript configuration
 ```
@@ -172,12 +172,12 @@ After this, select if you want to create a page or component and set the name.
 
 You can change the templates and settings of generator at path `generators` on project root.
 
----
-
 #### 📄 License
 
 <div calign="center">
     🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and @Next13Boilerplate contributors
 </div>
+
+---
 
 [Back To The Top](#read-me-template)
