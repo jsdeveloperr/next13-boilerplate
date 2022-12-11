@@ -174,4 +174,10 @@ You can change the templates and settings of generator at path `generators` on p
 
 ---
 
+#### 📄 License
+
+<div calign="center">
+    🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and @Next13Boilerplate contributors
+</div>
+
 [Back To The Top](#read-me-template)
